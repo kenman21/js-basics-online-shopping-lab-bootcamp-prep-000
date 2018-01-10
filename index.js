@@ -15,17 +15,22 @@ function addToCart(item) {
  var itemPrice = Math.floor(Math.random()*100)
  var NewCartItem = {}
  NewCartItem[item] = itemPrice
+<<<<<<< HEAD
  if (cart[0] === "") {
    cart.splice(0,1,NewCartItem)
  } else{
  cart.push(NewCartItem)
  }
+=======
+ cart.push(NewCartItem)
+>>>>>>> ad4366b445f3aea4843d6b2e57c5f08297fea20f
  console.log(`${item} has been added to your cart.`)
  return cart
 }
 
 
 function viewCart() {
+<<<<<<< HEAD
   var cartitems = ""
   if (cart.length === 0 ) {
     console.log("Your shopping cart is empty.")
@@ -35,10 +40,17 @@ function viewCart() {
     var itemPrice = cart[i][item];
     if (i != cart.length-1) {
       cartitems = cartitems + " " + item + " at $" + itemPrice + ","
+=======
+  for (var i=0; i<cart.length; i++) {
+    var itemPrice = Math.floor(Math.random()*100);
+    if (i != cart.length-1) {
+      cartitems = cartitems + cart[i] + " at $" + itemPrice + ","
+>>>>>>> ad4366b445f3aea4843d6b2e57c5f08297fea20f
       if (cart.length == 2) {
         cartitems = cartitems.slice(0,-1)
       }
     } else {
+<<<<<<< HEAD
       cartitems = " " + cartitems + " and " + item + " at $" + itemPrice + "."
     }
   }
@@ -47,6 +59,14 @@ function viewCart() {
   } else{
   console.log(`In your cart, you have${cartitems.slice(1, cartitems.length)}`)
   }
+=======
+      cartitems = " " + cartitems + " and " + cart[i] + " at $" + itemPrice + "."
+    }
+  }
+  console.log(`In your cart, you have${cartitems}`)
+  return cart
+  
+>>>>>>> ad4366b445f3aea4843d6b2e57c5f08297fea20f
 }
 
 function total() {
